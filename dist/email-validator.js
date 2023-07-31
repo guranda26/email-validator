@@ -4,7 +4,9 @@ const VALID_EMAIL_ENDINGS = [
   "outlook.com",
   "yandex.ru",
 ];
+
 const isValid = (email) => {
+  // eslint-disable-next-line no-restricted-syntax
   for (const endingEl of VALID_EMAIL_ENDINGS) {
     if (email.endsWith(endingEl)) {
       return true;
@@ -12,4 +14,4 @@ const isValid = (email) => {
   }
   return false;
 };
-export { isValid };
+export default isValid;

@@ -1,6 +1,8 @@
 import { isValid } from "./email-validator";
 import "../styles/style.css";
 
+const ignoredVar = "Disable variable"; // eslint disable
+
 class Section {
   constructor(title, buttonText) {
     this.title = title;
@@ -63,6 +65,7 @@ class Section {
 }
 
 class SectionCreator {
+  // eslint-disable-next-line class-methods-use-this
   create(type) {
     switch (type) {
       case "standard":
