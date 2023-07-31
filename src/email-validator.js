@@ -12,6 +12,7 @@ const isValid = (email) => {
       return true;
     }
   }
+
   return false;
 };
 export default isValid;
