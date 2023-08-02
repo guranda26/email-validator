@@ -4,6 +4,7 @@
   "description": "task about webpack",
   "main": "main.js",
   "dependencies": {
+    "@babel/preset-react": "^7.22.5",
     "acorn": "^8.10.0",
     "acorn-import-assertions": "^1.9.0",
     "ajv": "^6.12.6",
