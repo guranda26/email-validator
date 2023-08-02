@@ -1,10 +1,7 @@
 const path = require("path");
 const CopyPlugin = require("copy-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
-<<<<<<< HEAD
-=======
 const HtmlWebpackPlugin = require("html-webpack-plugin");
->>>>>>> 1c839a8 (changes)
 
 module.exports = (env, argv) => {
   const isProduction = argv.mode === "production";
@@ -13,11 +10,7 @@ module.exports = (env, argv) => {
     mode: isProduction ? "production" : "development",
     entry: {
       main: "./src/main.js",
-<<<<<<< HEAD
-      style: "./styles/style.css",
-=======
       // style: "./styles/style.css",
->>>>>>> 1c839a8 (changes)
     },
     output: {
       filename: "[name].bundle.js",
