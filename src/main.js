@@ -57,11 +57,13 @@ class Section {
           // Subscribe functionality
           localStorage.setItem("subscriptionEmail", email);
           submitButton.textContent = "Unsubscribe";
+          inputEmail.classList.add("hide-input");
         } else {
           // Unsubscribe functionality
           localStorage.removeItem("subscriptionEmail");
           inputEmail.value = "";
           submitButton.textContent = "Subscribe";
+          inputEmail.classList.remove("hide-input");
         }
       } else {
         alert("Invalid email address. Please try again");
@@ -72,6 +74,7 @@ class Section {
     if (savedEmail) {
       inputEmail.value = savedEmail;
       submitButton.textContent = "Unsubscribe";
+      inputEmail.classList.add("hide-input");
     }
 
     return joinProgram;

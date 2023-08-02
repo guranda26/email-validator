@@ -209,6 +209,10 @@ main {
   color: white;
 }
 
+.hide-input {
+  display: none;
+}
+
 .app-section__button--our-culture {
   width: 150px;
   height: 150px;
