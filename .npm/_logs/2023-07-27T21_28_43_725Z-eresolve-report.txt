@@ -1,0 +1,18 @@
+'Log files:
+/Users/guranda/.npm/_logs/2023-07-27T21_28_43_725Z-debug-0.log
+
+# npm resolution error report
+
+While resolving: webpack-basic@1.0.0
+Found: webpack@4.46.0
+node_modules/webpack
+  dev webpack@"^4.28.4" from the root project
+
+Could not resolve dependency:
+peer webpack@"^5.1.0" from copy-webpack-plugin@9.1.0
+node_modules/copy-webpack-plugin
+  dev copy-webpack-plugin@"9" from the root project
+
+Fix the upstream dependency conflict, or retry
+this command with --force or --legacy-peer-deps
+to accept an incorrect (and potentially broken) dependency resolution.

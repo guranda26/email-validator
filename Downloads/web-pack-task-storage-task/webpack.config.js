@@ -9,7 +9,7 @@ module.exports = (env, argv) => {
   return {
     mode: isProduction ? "production" : "development",
     entry: {
-      main: "./src/main.js",
+      main: "./main.js",
       // style: "./styles/style.css",
     },
     output: {
@@ -50,14 +50,14 @@ module.exports = (env, argv) => {
     plugins: [
       new CopyPlugin({
         patterns: [
-          { from: "src", to: "" },
-          { from: "styles/style.css", to: "styles" },
-          { from: "assets/images", to: "assets/images" },
+          { from: "src", to: "" }, // Copy src contents to dist
+          { from: "styles/style.css", to: "styles" }, // Copy style.css to dist/styles
+          { from: "assets/images", to: "assets/images" }, // Copy logo images to dist/assets/images
         ],
       }),
 
       new HtmlWebpackPlugin({
-        template: "./index.html",
+        // template: "./src/index.html",
         inject: "body",
       }),
       // ...

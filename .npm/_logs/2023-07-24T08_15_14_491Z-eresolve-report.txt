@@ -1,0 +1,27 @@
+'Log files:
+/Users/guranda/.npm/_logs/2023-07-24T08_15_14_491Z-debug-0.log
+
+# npm resolution error report
+
+While resolving: webpack-cli@3.2.1
+Found: webpack@5.88.2
+node_modules/webpack
+  dev webpack@"^5.88.2" from the root project
+  peer webpack@"^5.1.0" from terser-webpack-plugin@5.3.9
+  node_modules/terser-webpack-plugin
+    terser-webpack-plugin@"^5.3.7" from webpack@5.88.2
+
+Could not resolve dependency:
+peer webpack@"4.x.x" from webpack-cli@3.2.1
+node_modules/webpack-cli
+  dev webpack-cli@"^3.2.1" from the root project
+
+Conflicting peer dependency: webpack@4.46.0
+node_modules/webpack
+  peer webpack@"4.x.x" from webpack-cli@3.2.1
+  node_modules/webpack-cli
+    dev webpack-cli@"^3.2.1" from the root project
+
+Fix the upstream dependency conflict, or retry
+this command with --force or --legacy-peer-deps
+to accept an incorrect (and potentially broken) dependency resolution.

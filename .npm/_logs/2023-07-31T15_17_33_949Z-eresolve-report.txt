@@ -1,0 +1,69 @@
+'Log files:
+/Users/guranda/.npm/_logs/2023-07-31T15_17_33_949Z-debug-0.log
+
+# npm resolution error report
+
+While resolving: eslint-loader@4.0.2
+Found: eslint@8.46.0
+node_modules/eslint
+  peer eslint@"^6.0.0 || ^7.0.0 || >=8.0.0" from @eslint-community/eslint-utils@4.4.0
+  node_modules/@eslint-community/eslint-utils
+    @eslint-community/eslint-utils@"^4.2.0" from eslint@8.46.0
+  peer eslint@"^7.32.0 || ^8.2.0" from eslint-config-airbnb@19.0.4
+  node_modules/eslint-config-airbnb
+    dev eslint-config-airbnb@"^19.0.4" from the root project
+  peer eslint@"^7.32.0 || ^8.2.0" from eslint-config-airbnb-base@15.0.0
+  node_modules/eslint-config-airbnb-base
+    eslint-config-airbnb-base@"^15.0.0" from eslint-config-airbnb@19.0.4
+    node_modules/eslint-config-airbnb
+      dev eslint-config-airbnb@"^19.0.4" from the root project
+    dev eslint-config-airbnb-base@"^15.0.0" from the root project
+  peer eslint@"^2 || ^3 || ^4 || ^5 || ^6 || ^7.2.0 || ^8" from eslint-plugin-import@2.28.0
+  node_modules/eslint-plugin-import
+    peer eslint-plugin-import@"^2.25.3" from eslint-config-airbnb@19.0.4
+    node_modules/eslint-config-airbnb
+      dev eslint-config-airbnb@"^19.0.4" from the root project
+    peer eslint-plugin-import@"^2.25.2" from eslint-config-airbnb-base@15.0.0
+    node_modules/eslint-config-airbnb-base
+      eslint-config-airbnb-base@"^15.0.0" from eslint-config-airbnb@19.0.4
+      node_modules/eslint-config-airbnb
+        dev eslint-config-airbnb@"^19.0.4" from the root project
+      dev eslint-config-airbnb-base@"^15.0.0" from the root project
+    dev eslint-plugin-import@"^2.28.0" from the root project
+  peer eslint@"^3 || ^4 || ^5 || ^6 || ^7 || ^8" from eslint-plugin-jsx-a11y@6.7.1
+  node_modules/eslint-plugin-jsx-a11y
+    peer eslint-plugin-jsx-a11y@"^6.5.1" from eslint-config-airbnb@19.0.4
+    node_modules/eslint-config-airbnb
+      dev eslint-config-airbnb@"^19.0.4" from the root project
+    dev eslint-plugin-jsx-a11y@"^6.7.1" from the root project
+  peer eslint@"^3 || ^4 || ^5 || ^6 || ^7 || ^8" from eslint-plugin-react@7.33.1
+  node_modules/eslint-plugin-react
+    peer eslint-plugin-react@"^7.28.0" from eslint-config-airbnb@19.0.4
+    node_modules/eslint-config-airbnb
+      dev eslint-config-airbnb@"^19.0.4" from the root project
+    dev eslint-plugin-react@"^7.33.1" from the root project
+  peer eslint@"^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0" from eslint-plugin-react-hooks@4.6.0
+  node_modules/eslint-plugin-react-hooks
+    peer eslint-plugin-react-hooks@"^4.3.0" from eslint-config-airbnb@19.0.4
+    node_modules/eslint-config-airbnb
+      dev eslint-config-airbnb@"^19.0.4" from the root project
+    dev eslint-plugin-react-hooks@"^4.6.0" from the root project
+  dev eslint@"^8.46.0" from the root project
+  peer eslint@"^8.0.0" from eslint-webpack-plugin@4.0.1
+  node_modules/eslint-webpack-plugin
+    dev eslint-webpack-plugin@"*" from the root project
+
+Could not resolve dependency:
+peer eslint@"^6.0.0 || ^7.0.0" from eslint-loader@4.0.2
+node_modules/eslint-loader
+  dev eslint-loader@"^4.0.2" from the root project
+
+Conflicting peer dependency: eslint@7.32.0
+node_modules/eslint
+  peer eslint@"^6.0.0 || ^7.0.0" from eslint-loader@4.0.2
+  node_modules/eslint-loader
+    dev eslint-loader@"^4.0.2" from the root project
+
+Fix the upstream dependency conflict, or retry
+this command with --force or --legacy-peer-deps
+to accept an incorrect (and potentially broken) dependency resolution.

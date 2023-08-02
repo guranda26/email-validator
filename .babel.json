@@ -1,0 +1,101 @@
+{
+  "{\"filename\":\"/Users/guranda/Desktop/node/index.js\",\"env\":{},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/Users/guranda/Desktop/node\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.26.3": {
+    "metadata": {
+      "usedHelpers": [],
+      "marked": [],
+      "modules": {
+        "imports": [
+          {
+            "source": "express",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "express"
+              }
+            ]
+          },
+          {
+            "source": "./calc",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "calc"
+              }
+            ]
+          }
+        ],
+        "exports": {
+          "exported": [],
+          "specifiers": []
+        }
+      }
+    },
+    "options": {
+      "filename": "/Users/guranda/Desktop/node/index.js",
+      "filenameRelative": "/Users/guranda/Desktop/node/index.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "index.js",
+      "sourceFileName": "index.js",
+      "sourceRoot": "/Users/guranda/Desktop/node",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "/Users/guranda/Desktop/node",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "index"
+    },
+    "ignored": false,
+    "code": "import express from \"express\";\nimport calc from \"./calc\";\nconst aNumber = calc();\nconst app = express();\nconst PORT = 3000;\n\napp.get(\"/\", (req, res) => res.send(`Showin number ${aNumber} on port ${PORT}`));\n\napp.listen(PORT, () => console.log(`your server is running on port ${PORT}`));\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImluZGV4LmpzIl0sIm5hbWVzIjpbImV4cHJlc3MiLCJjYWxjIiwiYU51bWJlciIsImFwcCIsIlBPUlQiLCJnZXQiLCJyZXEiLCJyZXMiLCJzZW5kIiwibGlzdGVuIiwiY29uc29sZSIsImxvZyJdLCJtYXBwaW5ncyI6IkFBQUEsT0FBT0EsT0FBUCxNQUFvQixTQUFwQjtBQUNBLE9BQU9DLElBQVAsTUFBaUIsUUFBakI7QUFDQSxNQUFNQyxVQUFVRCxNQUFoQjtBQUNBLE1BQU1FLE1BQU1ILFNBQVo7QUFDQSxNQUFNSSxPQUFPLElBQWI7O0FBRUFELElBQUlFLEdBQUosQ0FBUSxHQUFSLEVBQWEsQ0FBQ0MsR0FBRCxFQUFNQyxHQUFOLEtBQ1hBLElBQUlDLElBQUosQ0FBVSxpQkFBZ0JOLE9BQVEsWUFBV0UsSUFBSyxFQUFsRCxDQURGOztBQUlBRCxJQUFJTSxNQUFKLENBQVdMLElBQVgsRUFBaUIsTUFBTU0sUUFBUUMsR0FBUixDQUFhLGtDQUFpQ1AsSUFBSyxFQUFuRCxDQUF2QiIsImZpbGUiOiJpbmRleC5qcyIsInNvdXJjZVJvb3QiOiIvVXNlcnMvZ3VyYW5kYS9EZXNrdG9wL25vZGUiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgZXhwcmVzcyBmcm9tIFwiZXhwcmVzc1wiO1xuaW1wb3J0IGNhbGMgZnJvbSBcIi4vY2FsY1wiO1xuY29uc3QgYU51bWJlciA9IGNhbGMoKTtcbmNvbnN0IGFwcCA9IGV4cHJlc3MoKTtcbmNvbnN0IFBPUlQgPSAzMDAwO1xuXG5hcHAuZ2V0KFwiL1wiLCAocmVxLCByZXMpID0+XG4gIHJlcy5zZW5kKGBTaG93aW4gbnVtYmVyICR7YU51bWJlcn0gb24gcG9ydCAke1BPUlR9YClcbik7XG5cbmFwcC5saXN0ZW4oUE9SVCwgKCkgPT4gY29uc29sZS5sb2coYHlvdXIgc2VydmVyIGlzIHJ1bm5pbmcgb24gcG9ydCAke1BPUlR9YCkpO1xuIl19",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "index.js"
+      ],
+      "names": [
+        "express",
+        "calc",
+        "aNumber",
+        "app",
+        "PORT",
+        "get",
+        "req",
+        "res",
+        "send",
+        "listen",
+        "console",
+        "log"
+      ],
+      "mappings": "AAAA,OAAOA,OAAP,MAAoB,SAApB;AACA,OAAOC,IAAP,MAAiB,QAAjB;AACA,MAAMC,UAAUD,MAAhB;AACA,MAAME,MAAMH,SAAZ;AACA,MAAMI,OAAO,IAAb;;AAEAD,IAAIE,GAAJ,CAAQ,GAAR,EAAa,CAACC,GAAD,EAAMC,GAAN,KACXA,IAAIC,IAAJ,CAAU,iBAAgBN,OAAQ,YAAWE,IAAK,EAAlD,CADF;;AAIAD,IAAIM,MAAJ,CAAWL,IAAX,EAAiB,MAAMM,QAAQC,GAAR,CAAa,kCAAiCP,IAAK,EAAnD,CAAvB",
+      "file": "index.js",
+      "sourceRoot": "/Users/guranda/Desktop/node",
+      "sourcesContent": [
+        "import express from \"express\";\nimport calc from \"./calc\";\nconst aNumber = calc();\nconst app = express();\nconst PORT = 3000;\n\napp.get(\"/\", (req, res) =>\n  res.send(`Showin number ${aNumber} on port ${PORT}`)\n);\n\napp.listen(PORT, () => console.log(`your server is running on port ${PORT}`));\n"
+      ]
+    },
+    "mtime": 1689843387209
+  }
+}

@@ -44,9 +44,9 @@ module.exports = (env, argv) => {
     plugins: [
       new CopyPlugin({
         patterns: [
-          { from: "src", to: "" }, // Copy src contents to dist
-          { from: "styles/style.css", to: "styles" }, // Copy style.css to dist/styles
-          { from: "assets/images", to: "assets/images" }, // Copy logo images to dist/assets/images
+          { from: "src", to: "" },
+          { from: "styles/style.css", to: "styles" },
+          { from: "assets/images", to: "assets/images" },
         ],
       }),
       new HtmlWebpackPlugin({
