@@ -1,10 +1,12 @@
-import { isValid } from "./email-validator";
+import isValid from "./email-validator";
 import "../styles/style.css";
 
 class Section {
+  // eslint disable
   constructor(title, buttonText) {
     this.title = title;
     this.buttonText = buttonText;
+    this.sectionElement = this.joinProgramSection();
   }
 
   joinProgramSection() {
@@ -21,6 +23,7 @@ class Section {
     const form = document.createElement("form");
     form.id = "subscribeForm";
     const inputEmail = document.createElement("input");
+
     inputEmail.type = "email";
     inputEmail.className = "input-email";
     inputEmail.placeholder = "email";
@@ -39,47 +42,47 @@ class Section {
     joinProgram.appendChild(subtitle);
     joinProgram.appendChild(form);
 
-    const footer = document.querySelector("footer");
-    footer.before(joinProgram);
+    const appContainer = document.getElementById("app-container");
+    appContainer.insertBefore(
+      joinProgram,
+      appContainer.querySelector("footer")
+    );
 
-    const subscribeForm = document.getElementById("subscribeForm");
-    subscribeForm.addEventListener("submit", function (event) {
-      event.preventDefault();
-      const enterEmail = document.getElementById("email");
-      console.log("Entered email is:", enterEmail.value);
-    });
-    form.addEventListener("submit", (event) => {
+    submitButton.addEventListener("click", (event) => {
       event.preventDefault();
       const email = inputEmail.value;
       const isEmailValid = isValid(email);
 
       if (isEmailValid) {
-        alert("Email address is valid");
+        if (submitButton.textContent === "Subscribe") {
+          localStorage.setItem("subscriptionEmail", email);
+          submitButton.textContent = "Unsubscribe";
+          inputEmail.classList.add("hide-input");
+        } else {
+          localStorage.removeItem("subscriptionEmail");
+
+          inputEmail.value = "";
+          submitButton.textContent = "Subscribe";
+          inputEmail.classList.remove("hide-input");
+        }
       } else {
         alert("Invalid email address. Please try again");
       }
     });
-  }
-}
 
-class SectionCreator {
-  create(type) {
-    switch (type) {
-      case "standard":
-        return new Section("Join Our Program", "Subscribe");
-      case "advanced":
-        return new Section(
-          "Join Our Advanced Program",
-          "Subscribe to Advanced Program"
-        );
+    const savedEmail = localStorage.getItem("subscriptionEmail");
+    if (savedEmail) {
+      inputEmail.value = savedEmail;
+      submitButton.textContent = "Unsubscribe";
+      inputEmail.classList.add("hide-input");
     }
+
+    return joinProgram;
   }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const sectionCreator = new SectionCreator();
-  const standardSection = sectionCreator.create("standard");
-  standardSection.joinProgramSection(); // Difference 2
+  const sectionCreator = new Section("Join Our Program", "Subscribe");
   const appContainer = document.getElementById("app-container");
-  appContainer.appendChild(standardSection.sectionElement);
+  appContainer.insertBefore(joinProgram, appContainer.querySelector("footer"));
 });

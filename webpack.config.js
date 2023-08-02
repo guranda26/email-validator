@@ -8,10 +8,7 @@ module.exports = (env, argv) => {
 
   return {
     mode: isProduction ? "production" : "development",
-    entry: {
-      main: "./src/main.js",
-      // style: "./styles/style.css",
-    },
+    entry: "./src/main.js",
     output: {
       filename: "[name].bundle.js",
       path: path.resolve(__dirname, "dist"),
@@ -38,19 +35,23 @@ module.exports = (env, argv) => {
         },
       ],
     },
+
     devServer: {
-      static: path.join(__dirname, "dist"),
+      static: { directory: path.resolve(__dirname, "dist") },
+      compress: true,
+      port: 8080,
+      hot: true,
     },
     plugins: [
       new CopyPlugin({
         patterns: [
-          { from: "src", to: "" },
+          // { from: "src", to: "" },
           { from: "styles/style.css", to: "styles" },
           { from: "assets/images", to: "assets/images" },
         ],
       }),
       new HtmlWebpackPlugin({
-        // template: "./src/index.html",
+        template: "./src/index.html",
         inject: "body",
       }),
       // ...
