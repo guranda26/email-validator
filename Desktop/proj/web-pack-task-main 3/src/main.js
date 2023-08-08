@@ -89,15 +89,15 @@ class Section {
 
        
           const xhr = new XMLHttpRequest();
-          xhr.open("POST", "/unsubscribe", true); // Updated the URL to use the relative path
+          xhr.open("POST", "/unsubscribe", true); 
           xhr.setRequestHeader("Content-Type", "application/json");
 
           xhr.onload = function () {
             if (xhr.status === 200) {
-              // Success response
+         
               alert("You have successfully unsubscribed!");
             } else {
-              // Error response or other issues
+           
               alert("Failed to unsubscribe. Please try again later.");
             }
           };
@@ -157,8 +157,8 @@ class Section {
           communityList.appendChild(listItem);
         });
 
-        communitySection.innerHTML = ""; // Clear existing content
-        communitySection.appendChild(communityList); // Append the community list
+        communitySection.innerHTML = "";
+        communitySection.appendChild(communityList); 
       })
       .catch((error) => {
         console.error("Error fetching community data:", error);
