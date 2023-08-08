@@ -49,45 +49,45 @@ class Section {
 
       if (isEmailValid) {
         if (submitButton.textContent === "Subscribe") {
-          // Subscribe functionality
+          
           localStorage.setItem("subscriptionEmail", email);
           submitButton.textContent = "Unsubscribe";
           inputEmail.classList.add("hide-input");
 
-          // AJAX request to subscribe
+    
           const xhr = new XMLHttpRequest();
           xhr.open("POST", "/subscribe", true); // Updated the URL to use the relative path
           xhr.setRequestHeader("Content-Type", "application/json");
 
           xhr.onload = function () {
             if (xhr.status === 200) {
-              // Success response
+          
               alert("You have successfully subscribed!");
             } else if (xhr.status === 422) {
-              // Error response with validation message
+              
               const responsePayload = JSON.parse(xhr.responseText);
               alert(`Error: ${responsePayload.error}`);
             } else {
-              // Other error responses
+            
               alert("Failed to subscribe. Please try again later.");
             }
           };
 
           xhr.onerror = function () {
-            // Error occurred while making the request
+           
             alert("An error occurred. Please try again later.");
           };
 
           const data = JSON.stringify({ email });
           xhr.send(data);
         } else {
-          // Unsubscribe functionality
+     
           localStorage.removeItem("subscriptionEmail");
           inputEmail.value = "";
           submitButton.textContent = "Subscribe";
           inputEmail.classList.remove("hide-input");
 
-          // AJAX request to unsubscribe
+       
           const xhr = new XMLHttpRequest();
           xhr.open("POST", "/unsubscribe", true); // Updated the URL to use the relative path
           xhr.setRequestHeader("Content-Type", "application/json");
@@ -103,7 +103,7 @@ class Section {
           };
 
           xhr.onerror = function () {
-            // Error occurred while making the request
+         
             alert("An error occurred. Please try again later.");
           };
 
@@ -166,29 +166,22 @@ class Section {
   }
 }
 
-// main.js
-// (the Section class implementation as provided earlier)
 
-// main.js
-// (the Section class implementation as provided earlier)
-
-// main.js
-// (The Section class implementation as provided earlier)
 
 document.addEventListener("DOMContentLoaded", () => {
   const sectionCreator = new Section("Join Our Program", "Subscribe");
   const appContainer = document.getElementById("app-container");
 
-  // Call the populateCommunitySection function to fetch and display community data
+
   sectionCreator.populateCommunitySection();
 
-  // Get the footer element
+
   const footer = document.querySelector("footer");
 
-  // Append the "Join Our Program" section before the footer
+
   appContainer.insertBefore(sectionCreator.sectionElement, footer);
 
-  // Function to handle the click event on the Subscribe/Unsubscribe button
+
   const handleSubscription = (event) => {
     event.preventDefault();
     const email = inputEmail.value;
@@ -201,7 +194,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       xhr.onload = function () {
         if (xhr.status === 200) {
-          // Success response
+
           const responsePayload = JSON.parse(xhr.responseText);
           if (responsePayload.subscribed) {
             localStorage.setItem("subscriptionEmail", email);
@@ -216,13 +209,13 @@ document.addEventListener("DOMContentLoaded", () => {
             alert("You have successfully unsubscribed!");
           }
         } else {
-          // Error response or other issues
+          
           alert("Failed to perform the action. Please try again later.");
         }
       };
 
       xhr.onerror = function () {
-        // Error occurred while making the request
+      
         alert("An error occurred. Please try again later.");
       };
 
@@ -236,10 +229,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const inputEmail = document.getElementById("email");
   const submitButton = document.querySelector(".subscribe-button");
 
-  // Add the event listener to the Subscribe/Unsubscribe button
+
   submitButton.addEventListener("click", handleSubscription);
 
-  // Check if there is a saved email and update the button text accordingly
+
   const savedEmail = localStorage.getItem("subscriptionEmail");
   if (savedEmail) {
     inputEmail.value = savedEmail;
