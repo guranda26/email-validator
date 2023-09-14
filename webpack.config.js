@@ -1,16 +1,14 @@
 const path = require("path");
 const CopyPlugin = require("copy-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = (env, argv) => {
   const isProduction = argv.mode === "production";
 
   return {
     mode: isProduction ? "production" : "development",
-    entry: {
-      main: "./src/main.js",
-      style: "./styles/style.css",
-    },
+    entry: "./src/main.js",
     output: {
       filename: "[name].bundle.js",
       path: path.resolve(__dirname, "dist"),
@@ -37,17 +35,26 @@ module.exports = (env, argv) => {
         },
       ],
     },
+
     devServer: {
-      static: path.join(__dirname, "dist"),
+      static: { directory: path.resolve(__dirname, "dist") },
+      compress: true,
+      port: 8080,
+      hot: true,
     },
     plugins: [
       new CopyPlugin({
         patterns: [
-          { from: "src", to: "" }, // Copy src contents to dist
-          { from: "styles/style.css", to: "styles" }, // Copy style.css to dist/styles
-          { from: "assets/images", to: "assets/images" }, // Copy logo images to dist/assets/images
+          // { from: "src", to: "" },
+          { from: "styles/style.css", to: "styles" },
+          { from: "assets/images", to: "assets/images" },
         ],
       }),
+      new HtmlWebpackPlugin({
+        template: "./src/index.html",
+        inject: "body",
+      }),
+      // ...
     ],
     optimization: {
       minimizer: isProduction
